@@ -10,7 +10,7 @@ void number(int i)
 {
 	if (i / 100 != 0)
 	{
-		_putchar(i / 100 + '0');
+		putchar(i / 100 + '0');
 		_putchar(((i % 100) / 10) + '0');
 	}
 	else

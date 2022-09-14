@@ -29,7 +29,6 @@ void number(int i)
 }
 
 /**
- *
  *print_times_table - function that print the n times table, starting with 0
  *@num: the paramater of the function
  *Return: void

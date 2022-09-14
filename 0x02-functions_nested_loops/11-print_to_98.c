@@ -28,7 +28,7 @@ void numberz(int i)
  *Return: void
  */
 
-void print_to_98(void)
+void print_to_98(int n)
 {
 	int i;
 	int m;

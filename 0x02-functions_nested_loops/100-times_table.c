@@ -1,70 +1,45 @@
 #include "main.h"
 
 /**
- *number - function that print number
- *@i: number to print
- *Return: void
+ * print_times_table - Prints a multiplication table up to param
+ * @n: The number to be treated
+ *
+ * Return: Number matrix
  */
-
-void number(int i)
+void print_times_table(int n)
 {
-	if (i / 100 != 0)
-	{
-		_putchar(i / 100 + '0');
-		_putchar(((i % 100) / 10) + '0');
-	}
-	else
-	{
-		_putchar(' ');
-		if (i / 10 == 0)
-		{
-			_putchar(' ');
-		}
-		else
-		{
-			_putchar(i / 10 + '0');
-		}
-	}
-	_putchar(i % 10 + '0');
-}
+	int a, b, op;
 
-/**
- *print_times_table - function that print the n times table, starting with 0
- *@num: the paramater of the function
- *Return: void
- */
-
-void print_times_table(int num)
-{
-	int n;
-	int t;
-	int m;
-
-	if (num < 0 || num > 15)
+	if (n >= 0 && n <= 15)
 	{
-		return;
-	}
-	if (num == 0)
-	{
-		_putchar(48);
-		_putchar('\n');
-		return;
-	}
-	for (n = 0; n <= num; n++)
-	{
-		_putchar(48);
-		_putchar(',');
-		_putchar(' ');
-		for (t = 1; t <= num; t++)
+		for (a = 0; a <= n; a++)
 		{
-			m = n * t;
-			number(m);
-			if (t != num)
+			_putchar(48);
+			for (b = 1; b <= n; b++)
 			{
-				_putchar(',');
-				_putchar(' ');
+				op = a * b;
+				_putchar(44);
+				_putchar(32);
+				if (op <= 9)
+				{
+					_putchar(32);
+					_putchar(32);
+					_putchar(op + 48);
+				}
+				else if (op <= 99)
+				{
+					_putchar(32);
+					_putchar((op / 10) + 48);
+					_putchar((op % 10) + 48);
+				}
+				else
+				{
+					_putchar(((op / 100) % 10) + 48);
+					_putchar(((op / 10) % 10) + 48);
+					_putchar((op % 10) + 48);
+				}
 			}
+			_putchar('\n');
 		}
 	}
-	_putchar('\n');
 }

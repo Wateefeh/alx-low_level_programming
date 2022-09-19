@@ -3,7 +3,7 @@
 /**
  *_strcpy - function that copies the string pointed by src, included the
  *teminate null byte (\0), to the buffer pointed to by dest
- *dest: the first parameter
+ *@dest: the first parameter
  *@src: second prameter
  *Return: the pointer to dest
  */

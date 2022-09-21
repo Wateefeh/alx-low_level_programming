@@ -1,57 +1,26 @@
 #include "main.h"
 
 /**
- *_strlen - function that return the length of a string
- *@s: the string
- *Return: length of s
- */
-
-int _strlen(char *s)
-{
-	int i;
-
-	i = 0;
-	while (*(s + i))
-		i++;
-
-	return (i);
-}
-
-/**
- *_strncpy - function that copies the string pointed by src, included the
- *teminate null byte (\0), to the buffer pointed to by dest
- *@dest: the first parameter
- *@src: the second parameter
- *Return: the poimnter to dest
+ *_strncpy - C function that copies a string, including the
+ *terminating null byte, using at most an inputted number of bytes.
+ *if the length of the source string is less than the maximum byte number,
+ *the remainder of the destiination string is filled with the null bytes.
+ *works identically to the standard library function 'strncpy'
+ *@dest: buffer storing the string copy
+ *@src: the source of the string
+ *@n: max number of the byte copied
+ *Return: returns
  */
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int ld, ls, nn;
+	int i;
 
-	ld = _strlen(dest);
-	ls = _strlen(src);
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
 
-	if (n <= 0)
-		return (dest);
-	n--;
+	for ( ; i < n; i++)
+		dest[i] = '\0';
 
-	if (n > ls)
-		n = ls;
-	while (n >= 0)
-	{
-		*(dest + n) = *(src + n);
-		n--;
-	}
-
-	nn = ld - n;
-	if (nn > 0)
-	{
-		while (nn > 0)
-		{
-			*(dest + ls + nn) = '\0';
-			nn--;
-		}
-	}
 	return (dest);
 }

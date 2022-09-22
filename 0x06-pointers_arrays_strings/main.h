@@ -1,5 +1,12 @@
 #ifndef MAIN_H_INCLUDED
 #define MAIN_H_INCLUDED
+#include <stdio.h>
+
+/**
+ *void prototypes()
+ *int prototypes()
+ *char prototypes()
+ */
 
 int _putchar(char);
 char *_strcat(char *, char *);

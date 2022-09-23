@@ -35,6 +35,28 @@ void printHexes(char *b, int start, int end)
 }
 
 /**
+ *printASCII - print ascii values for string b,
+ *formatted to replace nonprintable chars with '.'
+ *@b: string to print
+ *@start: starting position
+ *@end: ending position
+ */
+
+void printASCII(char *b, int start, int end)
+{
+	int ch, i = 0;
+
+	while (i < end)
+	{
+		ch = *(b + i + start);
+		if (!isPrintableASCII(ch))
+			ch = 46;
+		printf("%c", ch);
+		i++;
+	}
+}
+
+/**
  *print_buffer - prints a buffer
  *@b: string
  *@size: size of buffer
@@ -56,4 +78,3 @@ void print_buffer(char *b, int size)
 	} else
 		printf("\n");
 }
-

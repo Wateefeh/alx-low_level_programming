@@ -2,7 +2,7 @@
 #define MAIN_H
 
 /**
- *main - header file for protoypes
+ 6*main - header file for protoypes
  *void protoypes (void)
  *int protoypes (int)
  */

@@ -139,13 +139,13 @@ char *strmul(char *a, char *b)
 		sum_carry = 0;
 		for (j = la - 1, k = l; j >= 0; --j, ++k)
 		{
-			ul = (a[j] - '0') * (b[i] - '0') + mul_carry;
-			ul_carry = mul / 10;
-			ul %= 10;
-			um = result[k] + mul + sum_carry;
-			um_carry = sum / 10;
-			um %= 10;
-			esult[k] = sum;
+			mul = (a[j] - '0') * (b[i] - '0') + mul_carry;
+			mul_carry = mul / 10;
+			mul %= 10;
+			sum = result[k] + mul + sum_carry;
+			sum_carry = sum / 10;
+			sum %= 10;
+			result[k] = sum;
 		}
 		result[k] = sum_carry + mul_carry;
 	}
